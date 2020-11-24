@@ -2,9 +2,9 @@ import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 import gridData from "../../data/grid.json";
 
-var columns = gridData.columns
+var selectedColumns = gridData.columns.slice(0,5)
 const grid = new Grid({
-    columns: columns.slice(0,5),
+    columns: selectedColumns,
     sort: true,
     data: gridData.schoolData
 });
