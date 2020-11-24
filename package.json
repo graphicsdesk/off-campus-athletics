@@ -17,6 +17,7 @@
     "sass": "^1.26.5"
   },
   "dependencies": {
+    "gridjs": "^3.0.2",
     "intersection-observer": "^0.10.0",
     "text-balancer": "^1.0.5"
   },
