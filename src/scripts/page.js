@@ -1,5 +1,6 @@
 import { spectate as spectateConfig } from '../../package.json';
 import initGrid from "../scripts/grid";
+
 /**
  * Put all initializer scripts into this init() function
  */
@@ -11,6 +12,7 @@ function init() {
   if (document.querySelector('.g-artboard[data-min-width]')) {
     import('./ai2html-resizer').then(p => p.default());
   }
+  
 }
 
 /**
@@ -114,3 +116,4 @@ if (isOnSpectatorPage && isOnContributorPage) {
   styleSheet.innerText = '.story-summary > .twolines { display: none; }';
   document.head.appendChild(styleSheet);
 }
+
