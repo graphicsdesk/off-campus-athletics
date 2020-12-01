@@ -2,7 +2,14 @@
   "headline": "The ‘inescapable’ effect of off-campus athletics: How the distance to Baker has shaped Columbia’s recruiting, performance, and sports culture",
   "date": "",
   "byline": "",
-  "top": [],
+  "top": [
+    {
+      "type": "graphic",
+      "value": {
+        "asset": "line-map.html"
+      }
+    }
+  ],
   "body": [
     {
       "type": "subhed",
