@@ -1,3 +1,4 @@
+import Doc from "../../data/doc.json";
 // Number of slides that will drive (more = smoother)
 // If this doesn't match the number of slides named 'drive-slide' in config below you will not complete the full journey
 var driveSlides = 4;
@@ -6,7 +7,7 @@ var driveSlides = 4;
 var driveSmoothness = 200;
 
 // Value used to drive
-var driveTime = driveSlides*driveSmoothness;
+var driveTime = driveSlides * driveSmoothness;
 
 // Do you want to follow the point? True = follow  (I don't think we need to follow the point, showing an overall and just line progressing is enough)
 var followPoint = false;
@@ -30,7 +31,7 @@ var config = {
     footer: '',
     chapters: [
         {
-            id: 'slide-0',
+            id: 'drive-slide-0',
             description: 'Step 1',
             //replace step with description from doc 
             location: {
@@ -40,7 +41,7 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'drive-slide-0',
+            id: 'drive-slide-1',
             description: 'Step 2',
             location: {
                 // location information is from the drive route
@@ -51,7 +52,7 @@ var config = {
             //8 mins (Apprx~1.8 miles in)
         },
         {
-            id: 'drive-slide-1',
+            id: 'drive-slide-2',
             description: 'Step 3',
             location: {},
             onChapterEnter: [],
@@ -60,7 +61,7 @@ var config = {
             //when route reaches 10 mins (Apprx~2.25 miles in)
         },
         {
-            id: 'drive-slide-2',
+            id: 'drive-slide-3',
             description: 'Step 4',
             location: {},
             onChapterEnter: [],
@@ -69,16 +70,24 @@ var config = {
             //sRoute reaches 20 mins (Apprx~4.50 miles in)
         },
         {
-            id: 'drive-slide-3',
+            id: 'slide-4',
             description: 'Step 5',
             location: {},
             onChapterEnter: [],
             //Route reaches Baker 
             onChapterExit: []
         },
- 
+
     ]
 };
+
+var steps = Doc.top[0].value.steps;
+console.log(steps)
+steps.forEach(function(element, index) {
+    config.chapters[index].description = element; 
+})
+
+
 
 module.exports = {
     driveSlides,
@@ -89,4 +98,4 @@ module.exports = {
     followBearing,
     followPitch,
     config
-  };
+};
