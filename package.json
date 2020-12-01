@@ -22,13 +22,9 @@
     "ajax": "0.0.4",
     "gridjs": "^3.0.2",
     "intersection-observer": "^0.10.0",
-<<<<<<< HEAD
-    "src": "^1.1.2",
-=======
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.13.0",
     "scrollama": "^2.2.1",
->>>>>>> 6d08b060d5ec89259841fccfed048e277cc1fd1e
     "text-balancer": "^1.0.5"
   },
   "browserslist": [
