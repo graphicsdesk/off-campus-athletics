@@ -236,6 +236,110 @@ if (config.showMarkers) {
     marker.setLngLat(config.chapters[0].location.center).addTo(map);
 }
 
+//map markers 
+var geojson = {
+    type: 'FeatureCollection',
+    features: [{
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.96373, 40.80807]
+        },
+        properties: {
+            title: '1',
+            description: 'Columbia'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.9603, 40.81794]
+        },
+        properties: {
+            title: '2',
+            description: 'UPenn'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.95926, 40.82053]
+        },
+        properties: {
+            title: '3',
+            description: 'Dartmouth'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.95241, 40.82851]
+        },
+        properties: {
+            title: '4',
+            description: 'Princeton'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.95241, 40.82851]
+        },
+        properties: {
+            title: '4',
+            description: 'Brown'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.94606, 40.84041]
+        },
+        properties: {
+            title: '4',
+            description: 'Cornell'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.9386, 40.8566]
+        },
+        properties: {
+            title: '4',
+            description: 'Harvard'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.93629, 40.85929]
+        },
+        properties: {
+            title: '4',
+            description: 'Yale'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.91622, 40.8721]
+        },
+        properties: {
+            title: '1',
+            description: 'test test'
+        }
+    }]
+};
+
 // instantiate the scrollama
 var scroller = scrollama();
 
@@ -319,6 +423,7 @@ map.on("load", function () {
         }
     });
 
+    var markers = []
     // setup the instance, pass callback functions
     scroller
         .setup({
@@ -329,6 +434,24 @@ map.on("load", function () {
         .onStepEnter(response => {
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.add('active');
+
+            //slide index VYG
+            let index = parseInt(response.element.id.slice(-1));
+            // create a HTML element for each feature
+            var m = geojson.features[index];
+            var el = document.createElement('div');
+            el.className = 'mark';
+            var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
+            var options = {
+                "color": colorIndex[response.index]
+            }
+            // make a marker for the feature and add to the map
+            if (response.index >= markers.length) {
+                var marker = new mapboxgl.Marker(options) // (el) is the custom marker
+                    .setLngLat(m.geometry.coordinates)
+                    .addTo(map);
+                markers.push(marker)
+            }
             // map.flyTo(chapter.location);
             if (config.showMarkers) {
                 marker.setLngLat(chapter.location.center);
@@ -338,6 +461,10 @@ map.on("load", function () {
             }
         })
         .onStepExit(response => {
+            if (response.direction == "up") {
+                markers[response.index].remove();
+                markers.pop();
+            }
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.remove('active');
             if (chapter.onChapterExit.length > 0) {

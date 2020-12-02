@@ -51,7 +51,6 @@ body{
     transform: rotate(90deg);
 }
 
-
 #map {
     top:0; 
     height: 100vh;
@@ -71,6 +70,10 @@ body{
     padding-top: 0vh;
     padding-bottom: 20vh;
     z-index: 100;
+}
+
+#drive-slide-3 {
+    opacity: 0;
 }
 .centered {
     width: 50vw;
@@ -109,6 +112,14 @@ body{
 
 .step img {
     width: 100%;
+}
+
+.mark { 
+    background-size: cover;
+    margin-top: -20px;
+    width: 30px;
+    height: 43px;
+    cursor: pointer;
 }
 
 @media (max-width: 750px) {
