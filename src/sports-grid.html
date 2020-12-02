@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <div class='dropdown'>
+    <script src = scripts/grid.js></script>
     <link rel="stylesheet" href="./styles.scss" />
 	<div class='title pointerCursor'>Select a sport <i class="fa fa-angle-right"></i></div>
 	<div class='menu pointerCursor hide'>
@@ -17,19 +18,10 @@
         <div class='option' id='Volleyball'>Volleyball</div>
 		</div>
 </div>
-<html>
-    <head>
-        <script src = scripts/grid.js></script>
-    </head>
-    <body>
-        <button id = "button" type = "button" onclick="reRender()">Refresh Grid</button>
-        
-    </body>
+    
+<button id = "button1" type = "button" onclick="reRender()">Refresh Grid</button>
+<button id = "button2" type = "button" onclick="updateColors()">Refresh Color</button>
 
-    <div id="grid"></div>
-</html>
-<div id="grid"></div>
-<button id = "button" type = "button" onclick="reRender()">Refresh Grid</button>
 <div id="grid"></div>
 <div class='dropdown'>
     <link rel="stylesheet" href="./styles.scss" />
