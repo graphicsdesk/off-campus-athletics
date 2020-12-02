@@ -10,7 +10,8 @@ const grid = new Grid({
   sort: true,
   data: gridData.schoolData
 });
-
+var clicked = Array(11).fill(false);
+var clicked_ids = []
 //code for dropdown buttom
 function toggleClass(elem, className) {
   if (elem.className.indexOf(className) !== -1) {
@@ -35,33 +36,52 @@ function toggleMenuDisplay(e) {
 function handleOptionSelected(e) {
 
   const id = e.target.id;
-  const newValue = 'Added ' + e.target.textContent + ' ';
   const titleElem = document.querySelector('.dropdown .title');
   const icon = document.querySelector('.dropdown .title .fa');
 
   var element = document.getElementById(id);
-  element.style.display = "none"
+  var sport_id = parseInt(element.id);
 
-  titleElem.textContent = newValue;
+  if (clicked[sport_id]){
+    element.style.backgroundColor = "rgba(0,0,0,0)"
+    var index = selectedColumns.indexOf(gridData.columns[sport_id])
+    reRender(index, false)
+    titleElem.textContent = 'Removed ' + e.target.textContent + ' ';
+    clicked[sport_id] = false;
+  } else{
+    element.style.backgroundColor = "rgba(0,0,0,0.1)"
+    reRender(sport_id, true)
+    titleElem.textContent = 'Added ' + e.target.textContent + ' ';
+    clicked[sport_id] = true
+    clicked_ids.push(sport_id)
+  }
+
   titleElem.appendChild(icon);
 
   //trigger custom event
   document.querySelector('.dropdown .title').dispatchEvent(new Event('change'));
+
   //setTimeout is used so transition is properly shown
   setTimeout(() => toggleClass(icon, 'rotate-90', 0));
 }
 
-document.getElementById("button").onclick = function () { reRender() };
-
-function reRender() {
+function reRender(sport, add) {
   //just need to change what you put into unshift
   //count is just a placeholder for now
-  count += 1
-  selectedColumns.push(gridData.columns[count])
+  if (add){
+    selectedColumns.push(gridData.columns[sport])
+  } else {
+    selectedColumns.splice(sport, 1)
+  }
+  
   //document.getElementById("button").innerHTML = count
-
+  
   if (selectedColumns.length > 5) {
     //gets rid of the last column
+    var removed_id = clicked_ids.shift()
+    var element = document.getElementById(removed_id.toString())
+    element.style.backgroundColor = "rgba(0,0,0,0)"
+    clicked[removed_id] = false;
     selectedColumns.shift()
   }
   //updates the grid
@@ -72,6 +92,13 @@ function reRender() {
 
 export default function () {
   grid.render(document.getElementById('grid'));
+  
+  for (var i = 1; i<count; i++){
+    clicked_ids.push(i)
+    clicked[i] = true;
+    var element = document.getElementById(i.toString());
+    element.style.backgroundColor = "rgba(0,0,0,0.1)"
+  }
 
   //get elements
   const dropdownTitle = document.querySelector('.dropdown .title');
