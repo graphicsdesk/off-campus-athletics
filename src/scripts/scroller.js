@@ -236,6 +236,66 @@ if (config.showMarkers) {
     marker.setLngLat(config.chapters[0].location.center).addTo(map);
 }
 
+//map markers 
+var geojson = {
+    type: 'FeatureCollection',
+    features: [{
+        type: 'Feature', //columbia
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.96373, 40.80807]
+        },
+        properties: {
+            title: '1',
+            description: 'test test'
+        }
+    },
+    {
+        type: 'Feature', //upenn
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.95933, 40.82018]
+        },
+        properties: {
+            title: '2',
+            description: 'test test'
+        }
+    },
+    {
+        type: 'Feature', //dartmouth
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.94917, 40.83633]
+        },
+        properties: {
+            title: '3',
+            description: 'test test'
+        }
+    },
+    {
+        type: 'Feature', //cornell
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.93233, 40.86623]
+        },
+        properties: {
+            title: '4',
+            description: 'test test'
+        }
+    },
+    {
+        type: 'Feature', //baker
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.91622, 40.8721]
+        },
+        properties: {
+            title: '1',
+            description: 'test test'
+        }
+    }]
+};
+
 // instantiate the scrollama
 var scroller = scrollama();
 
@@ -319,6 +379,7 @@ map.on("load", function () {
         }
     });
 
+    var markers = []
     // setup the instance, pass callback functions
     scroller
         .setup({
@@ -329,6 +390,24 @@ map.on("load", function () {
         .onStepEnter(response => {
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.add('active');
+
+            //slide index VYG
+            let index = parseInt(response.element.id.slice(-1));
+            // create a HTML element for each feature
+            var m = geojson.features[index];
+            var el = document.createElement('div');
+            el.className = 'mark';
+            var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#B31B1B", "#9BCBEB"]
+            var options = {
+                "color": colorIndex[response.index]
+            }
+            // make a marker for the feature and add to the map
+            if (response.index >= markers.length) {
+                var marker = new mapboxgl.Marker(options) // (el) is the custom marker
+                    .setLngLat(m.geometry.coordinates)
+                    .addTo(map);
+                markers.push(marker)
+            }
             // map.flyTo(chapter.location);
             if (config.showMarkers) {
                 marker.setLngLat(chapter.location.center);
@@ -338,6 +417,10 @@ map.on("load", function () {
             }
         })
         .onStepExit(response => {
+            if (response.direction == "up") {
+                markers[response.index].remove();
+                markers.pop();
+            }
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.remove('active');
             if (chapter.onChapterExit.length > 0) {
