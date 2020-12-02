@@ -240,51 +240,95 @@ if (config.showMarkers) {
 var geojson = {
     type: 'FeatureCollection',
     features: [{
-        type: 'Feature', //columbia
+        type: 'Feature', 
         geometry: {
             type: 'Point',
             coordinates: [-73.96373, 40.80807]
         },
         properties: {
             title: '1',
-            description: 'test test'
+            description: 'Columbia'
         }
     },
     {
-        type: 'Feature', //upenn
+        type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.95933, 40.82018]
+            coordinates: [-73.9603, 40.81794]
         },
         properties: {
             title: '2',
-            description: 'test test'
+            description: 'UPenn'
         }
     },
     {
-        type: 'Feature', //dartmouth
+        type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.94917, 40.83633]
+            coordinates: [-73.95926, 40.82053]
         },
         properties: {
             title: '3',
-            description: 'test test'
+            description: 'Dartmouth'
         }
     },
     {
-        type: 'Feature', //cornell
+        type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.93233, 40.86623]
+            coordinates: [-73.95241, 40.82851]
         },
         properties: {
             title: '4',
-            description: 'test test'
+            description: 'Princeton'
         }
     },
     {
-        type: 'Feature', //baker
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.95241, 40.82851]
+        },
+        properties: {
+            title: '4',
+            description: 'Brown'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.94606, 40.84041]
+        },
+        properties: {
+            title: '4',
+            description: 'Cornell'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.9386, 40.8566]
+        },
+        properties: {
+            title: '4',
+            description: 'Harvard'
+        }
+    },
+    {
+        type: 'Feature', 
+        geometry: {
+            type: 'Point',
+            coordinates: [-73.93629, 40.85929]
+        },
+        properties: {
+            title: '4',
+            description: 'Yale'
+        }
+    },
+    {
+        type: 'Feature', 
         geometry: {
             type: 'Point',
             coordinates: [-73.91622, 40.8721]
@@ -397,7 +441,7 @@ map.on("load", function () {
             var m = geojson.features[index];
             var el = document.createElement('div');
             el.className = 'mark';
-            var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#B31B1B", "#9BCBEB"]
+            var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
             var options = {
                 "color": colorIndex[response.index]
             }
