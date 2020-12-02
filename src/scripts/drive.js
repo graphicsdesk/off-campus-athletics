@@ -1,6 +1,4 @@
-import { driveTime, followPoint } from "./config"
 import mapData from "../../data/CUtoBaker.json";
-import * as turf from '@turf/turf'
 var routeData = mapData;
 
 

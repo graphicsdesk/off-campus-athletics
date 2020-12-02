@@ -1,7 +1,7 @@
 import Doc from "../../data/doc.json";
 // Number of slides that will drive (more = smoother)
 // If this doesn't match the number of slides named 'drive-slide' in config below you will not complete the full journey
-var driveSlides = 4;
+var driveSlides = 5;
 
 // Number of points on drive route (more = higher quality, but slower to process)
 var driveSmoothness = 200;
@@ -45,7 +45,7 @@ var config = {
             id: 'drive-slide-1',
             description: 'Step 2',
             location: {
-                center: [-73.95933, 40.82018]
+                center: [-73.94917,40.83633]
             },
             onChapterEnter: [],
             //Route reaches Penn marker on map
@@ -65,6 +65,16 @@ var config = {
         },
         {
             id: 'drive-slide-3',
+            description: 'Step 3',
+            location: {
+                center: [-73.94917,40.83633]
+            },
+            onChapterEnter: [],
+            //when route reaches Darmouth marker 
+            onChapterExit: []
+        },
+        {
+            id: 'drive-slide-4',
             description: 'Step 4',
             location: {
                 center: [-73.93233, 40.86623]
@@ -75,7 +85,7 @@ var config = {
             //sRoute reaches 20 mins (Apprx~4.50 miles in)
         },
         {
-            id: 'slide-4',
+            id: 'slide-5',
             description: 'Step 5',
             location: {
                 center: [-73.91622, 40.8721]
