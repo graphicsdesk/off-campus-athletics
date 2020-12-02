@@ -236,6 +236,66 @@ if (config.showMarkers) {
     marker.setLngLat(config.chapters[0].location.center).addTo(map);
 }
 
+//map markers 
+var geojson = { 
+    type: 'FeatureCollection',
+    features: [{
+        type: 'Feature', //columbia
+        geometry: {
+            type: 'Point', 
+            coordinates: [-73.96373, 40.80807]
+        },
+        properties: {
+            title: '1',
+            description: 'test test'
+        }
+    },
+    {
+        type: 'Feature', //upenn
+        geometry: {
+            type: 'Point', 
+            coordinates: [-73.95933, 40.82018]
+        },
+        properties: {
+            title: '2',
+            description: 'test test'
+        }
+    },
+    {
+        type: 'Feature', //dartmouth
+        geometry: {
+            type: 'Point', 
+            coordinates: [-73.94917,40.83633]
+        },
+        properties: {
+            title: '3',
+            description: 'test test'
+        }
+    },
+    {
+        type: 'Feature', //cornell
+        geometry: {
+            type: 'Point', 
+            coordinates: [-73.93233, 40.86623]
+        },
+        properties: {
+            title: '4',
+            description: 'test test'
+        }
+    },
+    {
+        type: 'Feature', //baker
+        geometry: {
+            type: 'Point', 
+            coordinates: [-73.91622, 40.8721]
+        },
+        properties: {
+            title: '1',
+            description: 'test test'
+        }
+    }]
+};
+
 // instantiate the scrollama
 var scroller = scrollama();
 
@@ -329,6 +389,20 @@ map.on("load", function () {
         .onStepEnter(response => {
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.add('active');
+            
+           //slide index VYG
+            let index = parseInt(response.element.id.slice(-1));
+            // create a HTML element for each feature
+            var m = geojson.features[index];
+            var el = document.createElement('div');
+            el.className = 'mark';
+            //doesn't work with scss el.style.backgroundImage = 'url(/data/marker_' + m.properties.title + '.svg)';
+
+            // make a marker for the feature and add to the map
+            new mapboxgl.Marker() // (el) is the custom marker
+                .setLngLat(m.geometry.coordinates)
+                .addTo(map);
+            
             // map.flyTo(chapter.location);
             if (config.showMarkers) {
                 marker.setLngLat(chapter.location.center);

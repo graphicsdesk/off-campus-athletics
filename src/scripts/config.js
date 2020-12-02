@@ -35,6 +35,7 @@ var config = {
             description: 'Step 1',
             //replace step with description from doc 
             location: {
+                center: [-73.96373, 40.80807]
             },
             onChapterEnter: [],
             //start
@@ -44,7 +45,7 @@ var config = {
             id: 'drive-slide-1',
             description: 'Step 2',
             location: {
-                // location information is from the drive route
+                center: [-73.95933, 40.82018]
             },
             onChapterEnter: [],
             //Route reaches Penn marker on map
@@ -54,7 +55,9 @@ var config = {
         {
             id: 'drive-slide-2',
             description: 'Step 3',
-            location: {},
+            location: {
+                center: [-73.94917,40.83633]
+            },
             onChapterEnter: [],
             //when route reaches Darmouth marker 
             onChapterExit: []
@@ -63,7 +66,9 @@ var config = {
         {
             id: 'drive-slide-3',
             description: 'Step 4',
-            location: {},
+            location: {
+                center: [-73.93233, 40.86623]
+            },
             onChapterEnter: [],
             //Route reaches Cornell marker
             onChapterExit: []
@@ -72,7 +77,9 @@ var config = {
         {
             id: 'slide-4',
             description: 'Step 5',
-            location: {},
+            location: {
+                center: [-73.91622, 40.8721]
+            },
             onChapterEnter: [],
             //Route reaches Baker 
             onChapterExit: []
@@ -86,8 +93,6 @@ console.log(steps)
 steps.forEach(function(element, index) {
     config.chapters[index].description = element; 
 })
-
-
 
 module.exports = {
     driveSlides,
