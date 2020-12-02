@@ -86,10 +86,6 @@ function createLine() {
             markers.push(marker);
             index++;
         }
-
-        console.log(newX.toFixed(5) == m.geometry.coordinates[0])
-        console.log(coord)
-        console.log(m.geometry.coordinates)
     }
 
 }
@@ -117,15 +113,7 @@ function changeCenter(index) {
     map.getSource('lineSource').setData(movingLine);
     map.getSource('pointSource').setData(movingPoint);
 
-    // current marker VYG
-    var ind = 0;
-    var m = geojson.features[ind];
-    var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
-    var options = {
-        "color": colorIndex[ind]
-    }
-
-    /* if index+1 center is greater than marker coordinates, make markers appear*/
+    /* if index+1 center is greater than marker coordinates, make markers appear
     if(index+1 < geojsonPoint.features[0].geometry.coordinates.length-1){
         var nextMarker = geojsonPoint.features[0].geometry.coordinates[index+1][0];
         //for loop of geojson var, if coordiantes less than nextMarkerr, make it appear on map
@@ -137,7 +125,7 @@ function changeCenter(index) {
                 ind++
             }
         }
-    }
+    } */
         
         
 
@@ -393,9 +381,17 @@ var geojson = {
 
 // instantiate the scrollama
 var scroller = scrollama();
+var markers = [];
 
 function handleStepProgress(response) {
     let stepProgress;
+
+    // current marker VYG
+    var ind = 0;
+    var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
+    var options = {
+        "color": colorIndex[ind]
+    }
 
     if (response.element.id.slice(0, 5) === 'drive') {
         let driveSlideNum = parseInt(response.element.id.slice(-1));
@@ -406,19 +402,26 @@ function handleStepProgress(response) {
             stepProgress = Math.round(response.progress * driveSmoothness + driveSmoothness * driveSlideNum);
         }
         changeCenter(stepProgress);
-
-
-        /* make markers appear for the coordinates one before slide
+        
+        /* make markers appear for the coordinates one before slide VYG
+        if(driveSlideNum+1 < response.element.length){
+            while(response.element[driveSlideNum+1].location.center[0] > geojson.features[ind].geometry.coordinates[0]){
+                var marker = new mapboxgl.Marker(options) 
+                    .setLngLat(m.geometry.coordinates)
+                    .addTo(map);
+                markers.push(marker);
+                ind++;
+                console.log(response.element[driveSlideNum+1].location.center[0])
+                console.log(geojson.features[ind].geometry.coordinates[0])
+            }
+        }
+        
         response.element = chapters
         driveSlideNum = index of chapters
         response.element[driveSlideNum].location.center = step coordinates  
         */
 
-    }
-
-
-
-    
+    } 
 }
 
 map.on("load", function () {
@@ -486,7 +489,6 @@ map.on("load", function () {
         }
     });
 
-    var markers = []
     // setup the instance, pass callback functions
     scroller
         .setup({
@@ -497,24 +499,7 @@ map.on("load", function () {
         .onStepEnter(response => {
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.add('active');
-
-            let index = parseInt(response.element.id.slice(-1));
-            /* create a HTML element for each feature
-            var m = geojson.features[index];
-
-            var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
-            var options = {
-                "color": colorIndex[response.index]
-            }
-            // make a marker for the feature and add to the map
-            if (response.index >= markers.length) {
-                var marker = new mapboxgl.Marker(options) // (el) is the custom marker
-                    .setLngLat(m.geometry.coordinates)
-                    .addTo(map);
-                markers.push(marker)
-            }
-
-            */
+            
             // map.flyTo(chapter.location);
             if (chapter.onChapterEnter.length > 0) {
                 chapter.onChapterEnter.forEach(setLayerOpacity);
