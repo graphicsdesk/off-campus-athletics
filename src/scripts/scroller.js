@@ -35,6 +35,10 @@ function createLine() {
     // what units do you want to use?
     const units = 'miles';
 
+    //marker index 
+    let index = 0;
+    var markers = []
+
     // based on the number of points...
     for (let i = 0; i <= rects; i++) {
 
@@ -45,9 +49,19 @@ function createLine() {
         let newX = pointonline.geometry.coordinates[0];
         let newY = pointonline.geometry.coordinates[1];
 
+        //coordinates on line VYG
+        var coord = [parseFloat(newX.toFixed(5)), parseFloat(newY.toFixed(5))];
+
         geojsonPoint.features[0].geometry.coordinates.push([newX, newY]);
 
-        // draw our initinal point
+        // current marker VYG
+        var m = geojson.features[index];
+        var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
+        var options = {
+            "color": colorIndex[index]
+        }
+
+        // draw our initial point
         if (i === 0) {
             let initPoint = turf.point([newX, newY]);
 
@@ -63,6 +77,19 @@ function createLine() {
         if (i == rects) {
             map.getSource('lineSource').setData(geojsonPoint);
         }
+
+        // check line coordinate latitude with markers coordinates VYG
+        if(newX.toFixed(5) == m.geometry.coordinates[0]) {
+            var marker = new mapboxgl.Marker(options) 
+                .setLngLat(m.geometry.coordinates)
+                .addTo(map);
+            markers.push(marker);
+            index++;
+        }
+
+        console.log(newX.toFixed(5) == m.geometry.coordinates[0])
+        console.log(coord)
+        console.log(m.geometry.coordinates)
     }
 
 }
@@ -89,6 +116,30 @@ function changeCenter(index) {
     let movingPoint = turf.point([centerX, centerY]);
     map.getSource('lineSource').setData(movingLine);
     map.getSource('pointSource').setData(movingPoint);
+
+    // current marker VYG
+    var ind = 0;
+    var m = geojson.features[ind];
+    var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
+    var options = {
+        "color": colorIndex[ind]
+    }
+
+    /* if index+1 center is greater than marker coordinates, make markers appear*/
+    if(index+1 < geojsonPoint.features[0].geometry.coordinates.length-1){
+        var nextMarker = geojsonPoint.features[0].geometry.coordinates[index+1][0];
+        //for loop of geojson var, if coordiantes less than nextMarkerr, make it appear on map
+        for(let i = 0; i < geojson.features.length; i++){
+            if(nextMarker > m.geometry.coordinates[0]){
+                var marker = new mapboxgl.Marker(options) 
+                    .setLngLat(m.geometry.coordinates)
+                    .addTo(map);
+                ind++
+            }
+        }
+    }
+        
+        
 
     // if you want to follow the point...
     if (followPoint === true) {
@@ -254,7 +305,7 @@ var geojson = {
         type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.9603, 40.81794]
+            coordinates: [-73.96030, 40.81794]
         },
         properties: {
             title: '2',
@@ -265,7 +316,7 @@ var geojson = {
         type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.95926, 40.82053]
+            coordinates: [-73.95924, 40.82055]  
         },
         properties: {
             title: '3',
@@ -276,7 +327,7 @@ var geojson = {
         type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.95241, 40.82851]
+            coordinates: [-73.95243, 40.82848]
         },
         properties: {
             title: '4',
@@ -287,7 +338,7 @@ var geojson = {
         type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.95241, 40.82851]
+            coordinates: [-73.95207, 40.82889]
         },
         properties: {
             title: '4',
@@ -298,7 +349,7 @@ var geojson = {
         type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.94606, 40.84041]
+            coordinates: [-73.94607, 40.84038]
         },
         properties: {
             title: '4',
@@ -309,7 +360,7 @@ var geojson = {
         type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.9386, 40.8566]
+            coordinates: [-73.93861, 40.85659]
         },
         properties: {
             title: '4',
@@ -320,7 +371,7 @@ var geojson = {
         type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.93629, 40.85929]
+            coordinates: [-73.93626, 40.8593]
         },
         properties: {
             title: '4',
@@ -331,7 +382,7 @@ var geojson = {
         type: 'Feature', 
         geometry: {
             type: 'Point',
-            coordinates: [-73.91622, 40.8721]
+            coordinates: [-73.91622, 40.87210]
         },
         properties: {
             title: '1',
@@ -355,7 +406,19 @@ function handleStepProgress(response) {
             stepProgress = Math.round(response.progress * driveSmoothness + driveSmoothness * driveSlideNum);
         }
         changeCenter(stepProgress);
+
+
+        /* make markers appear for the coordinates one before slide
+        response.element = chapters
+        driveSlideNum = index of chapters
+        response.element[driveSlideNum].location.center = step coordinates  
+        */
+
     }
+
+
+
+    
 }
 
 map.on("load", function () {
@@ -435,12 +498,10 @@ map.on("load", function () {
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.add('active');
 
-            //slide index VYG
             let index = parseInt(response.element.id.slice(-1));
-            // create a HTML element for each feature
+            /* create a HTML element for each feature
             var m = geojson.features[index];
-            var el = document.createElement('div');
-            el.className = 'mark';
+
             var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
             var options = {
                 "color": colorIndex[response.index]
@@ -452,19 +513,18 @@ map.on("load", function () {
                     .addTo(map);
                 markers.push(marker)
             }
+
+            */
             // map.flyTo(chapter.location);
-            if (config.showMarkers) {
-                marker.setLngLat(chapter.location.center);
-            }
             if (chapter.onChapterEnter.length > 0) {
                 chapter.onChapterEnter.forEach(setLayerOpacity);
             }
         })
         .onStepExit(response => {
-            if (response.direction == "up") {
+            /*if (response.direction == "up") {
                 markers[response.index].remove();
                 markers.pop();
-            }
+            }*/
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.remove('active');
             if (chapter.onChapterExit.length > 0) {
