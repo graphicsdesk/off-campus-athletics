@@ -3,14 +3,14 @@ import "gridjs/dist/theme/mermaid.css";
 import gridData from "../../data/grid.json";
 
 var count = 4
-var intial_column = gridData.columns.slice(0, 4)
-var selectedColumns = gridData.columns.slice(1, 4)
+var intial_column = gridData.columns.slice(0, count)
+var selectedColumns = gridData.columns.slice(1, count)
 const grid = new Grid({
   columns: intial_column,
   sort: true,
   data: gridData.schoolData
 });
-var clicked = Array(11).fill(false);
+var clicked = Array(13).fill(false);
 var clicked_ids = []
 //code for dropdown buttom
 function toggleClass(elem, className) {
@@ -72,6 +72,7 @@ function reRender(sport, add) {
     selectedColumns.push(gridData.columns[sport])
   } else {
     selectedColumns.splice(sport, 1)
+    clicked_ids.splice(clicked.indexOf(sport), 1)
   }
   
   //document.getElementById("button").innerHTML = count
