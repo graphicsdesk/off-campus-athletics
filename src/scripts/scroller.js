@@ -1,5 +1,5 @@
 
-import { routeData, geojsonPoint } from './drive';
+import { routeData, geojsonPoint, stepProgressMarkerTrigger, markerCoords } from './drive';
 import {
     driveTime,
     driveSmoothness,
@@ -35,31 +35,16 @@ function createLine() {
     // what units do you want to use?
     const units = 'miles';
 
-    //marker index 
-    let index = 0;
-    var markers = []
 
     // based on the number of points...
     for (let i = 0; i <= rects; i++) {
 
         // calculate point location for each segment
         const pointonline = turf.along(line, (segments * i));
-
         // push new x,y
         let newX = pointonline.geometry.coordinates[0];
         let newY = pointonline.geometry.coordinates[1];
-
-        //coordinates on line VYG
-        var coord = [parseFloat(newX.toFixed(5)), parseFloat(newY.toFixed(5))];
-
         geojsonPoint.features[0].geometry.coordinates.push([newX, newY]);
-
-        // current marker VYG
-        var m = geojson.features[index];
-        var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
-        var options = {
-            "color": colorIndex[index]
-        }
 
         // draw our initial point
         if (i === 0) {
@@ -77,21 +62,10 @@ function createLine() {
         if (i == rects) {
             map.getSource('lineSource').setData(geojsonPoint);
         }
-
-        // check line coordinate latitude with markers coordinates VYG
-        if(newX.toFixed(5) == m.geometry.coordinates[0]) {
-            var marker = new mapboxgl.Marker(options) 
-                .setLngLat(m.geometry.coordinates)
-                .addTo(map);
-            markers.push(marker);
-            index++;
-        }
     }
-
 }
 
 function changeCenter(index) {
-
     // Set center to a subsample of the line, say every 10th or 25th
     let subsampleIndex = 100;
 
@@ -113,21 +87,6 @@ function changeCenter(index) {
     map.getSource('lineSource').setData(movingLine);
     map.getSource('pointSource').setData(movingPoint);
 
-    /* if index+1 center is greater than marker coordinates, make markers appear
-    if(index+1 < geojsonPoint.features[0].geometry.coordinates.length-1){
-        var nextMarker = geojsonPoint.features[0].geometry.coordinates[index+1][0];
-        //for loop of geojson var, if coordiantes less than nextMarkerr, make it appear on map
-        for(let i = 0; i < geojson.features.length; i++){
-            if(nextMarker > m.geometry.coordinates[0]){
-                var marker = new mapboxgl.Marker(options) 
-                    .setLngLat(m.geometry.coordinates)
-                    .addTo(map);
-                ind++
-            }
-        }
-    } */
-        
-        
 
     // if you want to follow the point...
     if (followPoint === true) {
@@ -275,124 +234,13 @@ if (config.showMarkers) {
     marker.setLngLat(config.chapters[0].location.center).addTo(map);
 }
 
-//map markers 
-var geojson = {
-    type: 'FeatureCollection',
-    features: [{
-        type: 'Feature', 
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.96373, 40.80807]
-        },
-        properties: {
-            title: '1',
-            description: 'Columbia'
-        }
-    },
-    {
-        type: 'Feature', 
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.96030, 40.81794]
-        },
-        properties: {
-            title: '2',
-            description: 'UPenn'
-        }
-    },
-    {
-        type: 'Feature', 
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.95924, 40.82055]  
-        },
-        properties: {
-            title: '3',
-            description: 'Dartmouth'
-        }
-    },
-    {
-        type: 'Feature', 
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.95243, 40.82848]
-        },
-        properties: {
-            title: '4',
-            description: 'Princeton'
-        }
-    },
-    {
-        type: 'Feature', 
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.95207, 40.82889]
-        },
-        properties: {
-            title: '4',
-            description: 'Brown'
-        }
-    },
-    {
-        type: 'Feature', 
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.94607, 40.84038]
-        },
-        properties: {
-            title: '4',
-            description: 'Cornell'
-        }
-    },
-    {
-        type: 'Feature', 
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.93861, 40.85659]
-        },
-        properties: {
-            title: '4',
-            description: 'Harvard'
-        }
-    },
-    {
-        type: 'Feature', 
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.93626, 40.8593]
-        },
-        properties: {
-            title: '4',
-            description: 'Yale'
-        }
-    },
-    {
-        type: 'Feature', 
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.91622, 40.87210]
-        },
-        properties: {
-            title: '1',
-            description: 'test test'
-        }
-    }]
-};
-
 // instantiate the scrollama
 var scroller = scrollama();
 var markers = [];
+var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
 
 function handleStepProgress(response) {
     let stepProgress;
-
-    // current marker VYG
-    var ind = 0;
-    var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
-    var options = {
-        "color": colorIndex[ind]
-    }
-
     if (response.element.id.slice(0, 5) === 'drive') {
         let driveSlideNum = parseInt(response.element.id.slice(-1));
         if (driveSlideNum === 0) {
@@ -402,30 +250,33 @@ function handleStepProgress(response) {
             stepProgress = Math.round(response.progress * driveSmoothness + driveSmoothness * driveSlideNum);
         }
         changeCenter(stepProgress);
-        
-        /* make markers appear for the coordinates one before slide VYG
-        if(driveSlideNum+1 < response.element.length){
-            while(response.element[driveSlideNum+1].location.center[0] > geojson.features[ind].geometry.coordinates[0]){
-                var marker = new mapboxgl.Marker(options) 
-                    .setLngLat(m.geometry.coordinates)
-                    .addTo(map);
-                markers.push(marker);
-                ind++;
-                console.log(response.element[driveSlideNum+1].location.center[0])
-                console.log(geojson.features[ind].geometry.coordinates[0])
+
+        var ind = stepProgressMarkerTrigger.findIndex(function (number) {
+            return (number > stepProgress);
+        });
+
+        if (ind >= 0) {
+            if (ind >= markers.length) {
+                while (markers.length <= ind) {
+                    var options = {
+                        "color": colorIndex[markers.length]
+                    }
+                    var marker = new mapboxgl.Marker(options) // (el) is the custom marker
+                        .setLngLat(markerCoords.features[markers.length].geometry.coordinates)
+                        .addTo(map);
+                    markers.push(marker);
+                }
+            } else if (ind < markers.length - 1) {
+                while (markers.length > ind + 1) {
+                    markers[markers.length - 1].remove();
+                    markers.pop();
+                }
             }
         }
-        
-        response.element = chapters
-        driveSlideNum = index of chapters
-        response.element[driveSlideNum].location.center = step coordinates  
-        */
-
-    } 
+    }
 }
 
 map.on("load", function () {
-    console.log(routeData)
     let w = window.innerWidth;
     let initBounds = routeData.features[0].geometry.coordinates;
 
@@ -499,21 +350,31 @@ map.on("load", function () {
         .onStepEnter(response => {
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.add('active');
-            
+
             // map.flyTo(chapter.location);
             if (chapter.onChapterEnter.length > 0) {
                 chapter.onChapterEnter.forEach(setLayerOpacity);
             }
+            if (response.index == 5 && response.direction == "down") {
+                var options = {
+                    "color": colorIndex[markers.length]
+                }
+                var marker = new mapboxgl.Marker(options) // (el) is the custom marker
+                    .setLngLat(markerCoords.features[markers.length].geometry.coordinates)
+                    .addTo(map);
+                markers.push(marker)
+            }
         })
         .onStepExit(response => {
-            /*if (response.direction == "up") {
-                markers[response.index].remove();
-                markers.pop();
-            }*/
+            console.log(response)
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.remove('active');
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
+            }
+            if (response.index == 5 && response.direction == "up") {
+                markers[markers.length - 1].remove();
+                markers.pop();
             }
         })
         .onStepProgress(handleStepProgress);
