@@ -1,6 +1,6 @@
 import mapData from "../../data/CUtoBaker.json";
 var routeData = mapData;
-var stepProgressMarkerTrigger = [3, 4, 7, 7, 12, 17, 18, 25].map(function (x) { return x * 40; });
+var stepProgressMarkerTrigger = [3.5, 4, 7.5, 7.5, 11.5, 16.75, 18, 25].map(function (x) { return x * 40; });
 
 var geojsonPoint = {
     "type": "FeatureCollection",
