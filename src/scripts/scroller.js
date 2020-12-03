@@ -221,10 +221,6 @@ const transformRequest = (url) => {
 var map = new mapboxgl.Map({
     container: 'map',
     style: config.style,
-    // center: config.chapters[0].location.center,
-    // zoom: config.chapters[0].location.zoom,
-    // bearing: config.chapters[0].location.bearing,
-    // pitch: config.chapters[0].location.pitch,
     scrollZoom: false,
     transformRequest: transformRequest
 });
@@ -251,12 +247,15 @@ function handleStepProgress(response) {
         }
         changeCenter(stepProgress);
 
+        // get index of marker to put
         var ind = stepProgressMarkerTrigger.findIndex(function (number) {
             return (number > stepProgress);
         });
 
         if (ind >= 0) {
+            // if we are at a point where we are pass a marker
             if (ind >= markers.length) {
+                // make sure we did not miss a marker from scrolling too quickly
                 while (markers.length <= ind) {
                     var options = {
                         "color": colorIndex[markers.length]
@@ -267,6 +266,7 @@ function handleStepProgress(response) {
                     markers.push(marker);
                 }
             } else if (ind < markers.length - 1) {
+                // if we are at a point where we have excess markers
                 while (markers.length > ind + 1) {
                     markers[markers.length - 1].remove();
                     markers.pop();
@@ -355,6 +355,7 @@ map.on("load", function () {
             if (chapter.onChapterEnter.length > 0) {
                 chapter.onChapterEnter.forEach(setLayerOpacity);
             }
+            // add baker marker once get to last scrolly
             if (response.index == 5 && response.direction == "down") {
                 var options = {
                     "color": colorIndex[markers.length]
@@ -372,6 +373,7 @@ map.on("load", function () {
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
             }
+            // pop last marker for baker
             if (response.index == 5 && response.direction == "up") {
                 markers[markers.length - 1].remove();
                 markers.pop();
