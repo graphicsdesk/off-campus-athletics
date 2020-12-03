@@ -5,24 +5,13 @@ import gridData from "../../data/grid.json";
 var count = 4
 var intial_column = gridData.columns.slice(0, count)
 var selectedColumns = gridData.columns.slice(1, count)
-<<<<<<< HEAD
-=======
-
-var clicked = Array(11).fill(false);
-var clicked_ids = []
-
->>>>>>> 54785087cbb0eed82d42ee4db53dc57b24053911
 const grid = new Grid({
   columns: intial_column,
   sort: true,
   data: gridData.schoolData
 });
-<<<<<<< HEAD
 var clicked = Array(13).fill(false);
 var clicked_ids = []
-=======
-
->>>>>>> 54785087cbb0eed82d42ee4db53dc57b24053911
 //code for dropdown buttom
 function toggleClass(elem, className) {
   if (elem.className.indexOf(className) !== -1) {
