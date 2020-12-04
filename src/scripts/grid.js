@@ -48,6 +48,7 @@ function handleOptionSelected(e) {
     reRender(index, false)
     titleElem.textContent = 'Removed ' + e.target.textContent + ' ';
     clicked[sport_id] = false;
+    clicked_ids.splice(clicked_ids.indexOf(sport_id), 1)
   } else {
     element.style.backgroundColor = "rgba(0,0,0,0.1)"
     reRender(sport_id, true)
