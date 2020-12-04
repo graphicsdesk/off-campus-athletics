@@ -23,7 +23,7 @@ var config = {
     style: 'mapbox://styles/cxa3740/ckhpz4vka0jle19nqs0zqid0s',
     accessToken: 'pk.eyJ1IjoiY3hhMzc0MCIsImEiOiJja2hteW9jZW8weDRyMnJudXlza2MwdHh6In0.oVv8dLZ4PfT2zvvmkQ2EAA',
     showMarkers: false,
-    theme: 'light',
+    theme: 'dark',
     alignment: 'left',
     title: '',
     subtitle: '',
