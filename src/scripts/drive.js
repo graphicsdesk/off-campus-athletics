@@ -6,6 +6,9 @@ var geojsonPoint = {
     "type": "FeatureCollection",
     "features": [{
         "type": "Feature",
+        'properties': {
+            'color': '#FFFFFF' // red
+        },
         "geometry": {
             "type": "LineString",
             "coordinates": [
@@ -125,4 +128,4 @@ module.exports = {
     geojsonPoint,
     stepProgressMarkerTrigger,
     markerCoords
-  };
+};

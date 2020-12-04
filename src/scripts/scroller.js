@@ -77,6 +77,9 @@ function changeCenter(index) {
         "type": "FeatureCollection",
         "features": [{
             "type": "Feature",
+            'properties': {
+                'color': '#F7455D' // red
+            },
             "geometry": {
                 "type": "LineString",
                 "coordinates": currentJson
@@ -287,12 +290,12 @@ map.on("load", function () {
 
         if (w >= 500) {
             map.fitBounds(bounds, {
-                padding: { top: 150, bottom: 150, right: -100, left: 200 },
+                padding: { top: 100, bottom: 100, right: -100, left: 100 },
                 duration: 0
             });
         } else {
             map.fitBounds(bounds, {
-                padding: 20,
+                padding: { top: 20, bottom: 20, right: 40, left: 20 },
                 duration: 0
             });
         }
@@ -318,7 +321,7 @@ map.on("load", function () {
         "source": "lineSource",
         'paint': {
             'line-opacity': 1,
-            'line-color': '#333',
+            'line-color': '#FFFFFF',
             'line-width': 3.5
         },
         'layout': {
@@ -333,7 +336,7 @@ map.on("load", function () {
         'paint': {
             'circle-radius': 5,
             'circle-opacity': 1,
-            'circle-color': '#333'
+            'circle-color': '#FFFFFF'
         },
         'layout': {
             // 'visibility': 'none'
