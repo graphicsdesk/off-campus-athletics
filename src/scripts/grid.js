@@ -239,16 +239,10 @@ function selectionSortIndex(list) {
   return index_arr;
 }
 
-//add styling to the table
-function updateWidth(){
-  var table = document.getElementById("grid")
-  table.style = "width: 70%; height: auto; margin: auto;"
-}
 
 export default function () {
   grid.render(document.getElementById('grid'));
   setTimeout(function () { updateColors() }, 1);
-  updateWidth()
   for (var i = 1; i < count; i++) {
     clicked_ids.push(i)
     clicked[i] = true;

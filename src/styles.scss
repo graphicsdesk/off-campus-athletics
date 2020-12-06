@@ -13,33 +13,36 @@ body {
 
 .dropdown {
     z-index: 1;
-    position:absolute;
+    position: absolute;
     margin-top: -30px;
-    right: 0;
+    right: 15%;
     border: 0.1em solid black;
     width: 10em;
     margin-bottom: 1em;
     margin-left: 15%;
 }
+
 .dropdown .title {
     margin: .3em .3em .3em .3em;
     width: 100%;
 }
+
 .dropdown .title .fa-angle-right {
-    
     float: right;
     transition: transform .3s;
-    
+
 }
+
 .dropdown .menu {
-    position:relative;
-    right:0;
+    position: relative;
+    right: 0;
     transition: max-height .5s ease-out;
     max-height: 20em;
     overflow: hidden;
     background-color: white;
     width: 10em;
 }
+
 .dropdown .menu .option {
     margin: .3em .3em .3em .3em;
     margin-top: 0.3em;
@@ -53,14 +56,15 @@ body {
 }
 
 .pointerCursor:hover {
-    right:0;
+    right: 0;
     cursor: pointer;
 }
 
 .rotate-90 {
-    right:0;
+    right: 0;
     transform: rotate(90deg);
 }
+
 #grid {
     z-index: 0;
 }
@@ -95,6 +99,12 @@ body {
 .centered {
     width: 50vw;
     margin: 0 auto;
+}
+
+#grid {
+    width: 70%;
+    height: auto;
+    margin: auto;
 }
 
 .lefty {
@@ -156,5 +166,15 @@ body {
     #features {
         width: 90vw;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .dropdown {
+        right: 0%;
+    }
+
+    #grid {
+        width: 100% !important;
     }
 }
