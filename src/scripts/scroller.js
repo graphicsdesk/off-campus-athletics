@@ -290,7 +290,7 @@ map.on("load", function () {
 
         if (w >= 500) {
             map.fitBounds(bounds, {
-                padding: { top: 100, bottom: 100, right: -100, left: 100 },
+                padding: { top: 100, bottom: 100, right: -150, left: 150 },
                 duration: 0
             });
         } else {
@@ -321,7 +321,7 @@ map.on("load", function () {
         "source": "lineSource",
         'paint': {
             'line-opacity': 1,
-            'line-color': '#FFFFFF',
+            'line-color': '#d6ed17',
             'line-width': 3.5
         },
         'layout': {
@@ -336,7 +336,7 @@ map.on("load", function () {
         'paint': {
             'circle-radius': 5,
             'circle-opacity': 1,
-            'circle-color': '#FFFFFF'
+            'circle-color': '#d6ed17'
         },
         'layout': {
             // 'visibility': 'none'
