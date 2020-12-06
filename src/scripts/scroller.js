@@ -1,5 +1,5 @@
 
-import { routeData, geojsonPoint, stepProgressMarkerTrigger, markerCoords } from './drive';
+import { routeData, geojsonPoint, startPoint, stepProgressMarkerTrigger, markerCoords } from './drive';
 import {
     driveTime,
     driveSmoothness,
@@ -317,6 +317,11 @@ map.on("load", function () {
         "data": geojsonPoint
     });
 
+    map.addSource("start", {
+        "type": "geojson",
+        "data": startPoint
+    });
+
     map.addLayer({
         "id": "animatedLine",
         "type": "line",
@@ -345,6 +350,19 @@ map.on("load", function () {
         }
     });
 
+    map.addLayer({
+        "id": "point",
+        "type": "circle",
+        "source": "start",
+        'paint': {
+            'circle-radius': 5,
+            'circle-opacity': 1,
+            'circle-color': '#FFFFFF'
+        },
+        'layout': {
+            // 'visibility': 'none'
+        }
+    });
     // setup the instance, pass callback functions
     scroller
         .setup({
