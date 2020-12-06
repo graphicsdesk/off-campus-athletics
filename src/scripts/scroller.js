@@ -240,7 +240,7 @@ if (config.showMarkers) {
 // instantiate the scrollama
 var scroller = scrollama();
 var markers = [];
-var colorIndex = ["#9BCBEB", "#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
+var colorIndex = ["#011F5B", "#046A38", "#FF671F", "#7C2529", "#B31B1B", "#A41034", "#00356B", "#9BCBEB"]
 
 function handleStepProgress(response) {
     let stepProgress;
@@ -259,8 +259,10 @@ function handleStepProgress(response) {
         });
 
         if (ind >= 0) {
-            if (ind >= markers.length) {
-                while (markers.length <= ind) {
+            console.log(ind)
+            console.log(markers)
+            if (ind > markers.length) {
+                while (markers.length < ind) {
                     var options = {
                         "color": colorIndex[markers.length]
                     }
@@ -269,8 +271,8 @@ function handleStepProgress(response) {
                         .addTo(map);
                     markers.push(marker);
                 }
-            } else if (ind < markers.length - 1) {
-                while (markers.length > ind + 1) {
+            } else if (ind < markers.length) {
+                while (markers.length > ind) {
                     markers[markers.length - 1].remove();
                     markers.pop();
                 }
@@ -321,7 +323,7 @@ map.on("load", function () {
         "source": "lineSource",
         'paint': {
             'line-opacity': 1,
-            'line-color': '#d6ed17',
+            'line-color': '#FFFFFF',
             'line-width': 3.5
         },
         'layout': {
@@ -336,7 +338,7 @@ map.on("load", function () {
         'paint': {
             'circle-radius': 5,
             'circle-opacity': 1,
-            'circle-color': '#d6ed17'
+            'circle-color': '#FFFFFF'
         },
         'layout': {
             // 'visibility': 'none'

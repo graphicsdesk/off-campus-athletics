@@ -25,17 +25,6 @@ var markerCoords = {
         type: 'Feature',
         geometry: {
             type: 'Point',
-            coordinates: [-73.96373, 40.80807]
-        },
-        properties: {
-            title: '1',
-            description: 'Columbia'
-        }
-    },
-    {
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
             coordinates: [-73.96030, 40.81794]
         },
         properties: {
