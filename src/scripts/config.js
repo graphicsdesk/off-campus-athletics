@@ -99,7 +99,6 @@ var config = {
 };
 
 var steps = Doc.top[0].value.steps;
-console.log(steps)
 steps.forEach(function(element, index) {
     config.chapters[index].description = element; 
 })

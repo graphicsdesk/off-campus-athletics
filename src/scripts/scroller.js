@@ -13,7 +13,6 @@ import "intersection-observer";
 import scrollama from "scrollama";
 import * as turf from '@turf/turf';
 
-console.log(routeData)
 
 function createLine() {
 
@@ -259,8 +258,6 @@ function handleStepProgress(response) {
         });
 
         if (ind >= 0) {
-            console.log(ind)
-            console.log(markers)
             if (ind > markers.length) {
                 while (markers.length < ind) {
                     var options = {
@@ -389,7 +386,6 @@ map.on("load", function () {
             }
         })
         .onStepExit(response => {
-            console.log(response)
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.remove('active');
             if (chapter.onChapterExit.length > 0) {
