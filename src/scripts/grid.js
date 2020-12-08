@@ -78,7 +78,6 @@ function reRender(sport, add) {
     selectedColumns.push(gridData.columns[sport])
   } else {
     selectedColumns.splice(sport, 1)
-    clicked_ids.splice(clicked.indexOf(sport), 1)
   }
 
   if (selectedColumns.length > 5) {
