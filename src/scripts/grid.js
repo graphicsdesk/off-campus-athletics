@@ -8,7 +8,8 @@ var selectedColumns = gridData.columns.slice(1, count)
 const grid = new Grid({
   columns: intial_column,
   sort: true,
-  data: gridData.schoolData
+  data: gridData.schoolData,
+  
 });
 var clicked = Array(13).fill(false);
 var clicked_ids = []
@@ -94,6 +95,7 @@ function reRender(sport, add) {
   }).forceRender();
 
   setTimeout(function () { updateColors() }, 1);
+  updateWidth()
 }
 
 
@@ -235,6 +237,7 @@ function selectionSortIndex(list) {
 
   return index_arr;
 }
+
 
 export default function () {
   grid.render(document.getElementById('grid'));

@@ -18,21 +18,27 @@ var geojsonPoint = {
     }]
 };
 
+var startPoint = {
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        'properties': {
+            'color': '#FFFFFF' // red
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -73.96373,
+                40.80807,
+            ]
+        }
+    }]
+};
+
 //map markers 
 var markerCoords = {
     type: 'FeatureCollection',
     features: [{
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
-            coordinates: [-73.96373, 40.80807]
-        },
-        properties: {
-            title: '1',
-            description: 'Columbia'
-        }
-    },
-    {
         type: 'Feature',
         geometry: {
             type: 'Point',
@@ -126,6 +132,7 @@ var markerCoords = {
 module.exports = {
     routeData,
     geojsonPoint,
+    startPoint,
     stepProgressMarkerTrigger,
     markerCoords
 };
