@@ -1,19 +1,19 @@
 {
   "headline": "The ‘inescapable’ effect of off-campus athletics: How the distance to Baker has shaped Columbia’s recruiting, performance, and sports culture",
   "date": "",
-  "byline": "Visuals by: Victoria Geh, Evan Li, Patrick Puma, and Hong Sen Du",
+  "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Clara-Ence-Morse/\">Clara Ence Morse</a>\nVisual design by Jefferson Sheng\nInteractives by Victoria Geh, Evan Li, Patrick Puma, and <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
   "top": [
     {
       "type": "graphic",
       "value": {
         "asset": "line-map.html",
         "steps": [
-          "Out of all the Ivy League football athletes, a typical <span style=background-color:#9BCBEB;color:#FFFFFF;border-radius:2px;padding:4px 4px 2px 4px> Lion</span> would need to travel the furthest to reach their home court at Columbia’s Baker Athletic Complex.",
-          "5 minutes into the bus ride to Baker, the typical  <span style=background-color:#011F5B;color:#FFFFFF;border-radius:2px;padding:4px 4px 2px 4px> Penn</span> and <span style=background-color:#046A38;color:#FFFFFF;border-radius:2px;padding:4px 4px 2px 4px>Dartmouth</span> footballers would have reached their destination by walking from the center of their campuses.",
-          "10 minutes in, <span style=background-color:#FF671F;color:#FFFFFF;border-radius:2px;padding:4px 4px 2px 4px>Princeton</span> and <span style=background-color:#7C2529;color:#FFFFFF;border-radius:2px;padding:4px 4px 2px 4px>Brown</span>  footballers would have also reached their destination by walking.",
+          "Out of all the Ivy League football athletes, a typical <span style=background-color:#9BCBEB;color:#FFFFFF> Lion</span> would need to travel the furthest to reach their home court at Columbia’s Baker Athletic Complex.",
+          "Five minutes into the bus ride to Baker, the typical  <span style=background-color:#011F5B;color:#FFFFFF> Penn</span> and <span style=background-color:#046A38;color:#FFFFFF>Dartmouth</span> athletes would have reached their destination by walking from the center of their campuses.",
+          "Ten minutes in, <span style=background-color:#FF671F;color:#FFFFFF>Princeton</span> and <span style=background-color:#7C2529;color:#FFFFFF>Brown</span>  athletes would have also reached their destination by walking.",
           "",
-          "20 minutes in, <span style=background-color:#B31B1B;color:#FFFFFF;border-radius:2px;padding:4px 4px 2px 4px>Cornell</span> and <span style=background-color:#A41034;color:#FFFFFF;border-radius:2px;padding:4px 4px 2px 4px>Harvard</span> students would have reached their destination by walking, and <span style=background-color:#00356B;color:#FFFFFF;border-radius:2px;padding:4px 4px 2px 4px>Yale</span> athletes would have reached their practice by driving.",
-          "It takes a total of 25 minutes for Lions to reach Baker—almost an hour round trip that is sometimes worsened by traffic"
+          "Twenty minutes in, <span style=background-color:#B31B1B;color:#FFFFFF>Cornell</span> and <span style=background-color:#A41034;color:#FFFFFF>Harvard</span> students would have reached their destination by walking, and <span style=background-color:#00356B;color:#FFFFFF>Yale</span> athletes would have reached their practice by driving.",
+          "It takes a total of twenty-five minutes for Lions to reach Baker—almost an hour round trip that is sometimes worsened by traffic"
         ]
       }
     }
@@ -54,6 +54,7 @@
     {
       "type": "graphic",
       "value": {
+        "title": "Among its Ivy League peers, Columbia athletes spend the most travel time (minutes) for six out of twelve sports.",
         "asset": "sports-grid.html"
       }
     },
@@ -246,6 +247,14 @@
       "value": "“[At Plant,] everyone knew us for the football,” Murphy said. “I remember being the guy on campus. And then you come here—no one really knows, some people don’t even know that we have a football team. It’s honestly quite funny. I’ll be wearing a Columbia football shirt and someone will be like, ‘Oh, where do you guys play?’”"
     },
     {
+      "type": "graphic",
+      "value": {
+        "photo": "<a href=\"https://cloudfront-us-east-1.images.arcpublishing.com/spectator/73BTF4QYC5HSRENEWFP7IXOGKI.jpg\">https://cloudfront-us-east-1.images.arcpublishing.com/spectator/73BTF4QYC5HSRENEWFP7IXOGKI.jpg</a>",
+        "caption": "",
+        "credit": "Olivia Treynor / Senior Staff Photographer"
+      }
+    },
+    {
       "type": "text",
       "value": "The distance to games is not just physical, although it is, of course, largely that. It is also mental. Sports are a distant thought in the minds of many students, who might only see football’s Homecoming game — if they attend any Athletics events at all that year."
     },
@@ -261,5 +270,6 @@
       "type": "text",
       "value": "<i>Senior Staff Writer Clara Ence Morse can be contacted at </i><a href=\"mailto:clara.encemorse@columbiaspectator.com\"><i>clara.encemorse@columbiaspectator.com</i></a><i>. Follow her on Twitter </i><a href=\"https://twitter.com/ccemorse?lang=en\"><i>@ccemorse</i></a><i>.</i>"
     }
-  ]
+  ],
+  "methodology": ""
 }

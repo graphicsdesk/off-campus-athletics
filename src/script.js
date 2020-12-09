@@ -10,7 +10,6 @@ initiatePage();
 // Fade in navbar at scroll trigger
 
 const navbar = document.getElementById('navbar');
-
 const { USE_NEWS_NAV, USE_EYE_NAV, USE_COVER_HED } = spectateConfig;
 if (USE_NEWS_NAV || USE_EYE_NAV || USE_COVER_HED) {
   intersectTop({
