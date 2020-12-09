@@ -2,9 +2,8 @@ import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 import gridData from "../../data/grid.json";
 
-var count = 4
-var intial_column = gridData.columns.slice(0, count)
-var selectedColumns = gridData.columns.slice(1, count)
+var intial_column = [gridData.columns[0], gridData.columns[6], gridData.columns[5],gridData.columns[4]]
+var selectedColumns = [gridData.columns[6], gridData.columns[5],gridData.columns[4]]
 const grid = new Grid({
   columns: intial_column,
   sort: true,
@@ -239,12 +238,20 @@ function selectionSortIndex(list) {
 export default function () {
   grid.render(document.getElementById('grid'));
   setTimeout(function () { updateColors() }, 1);
-  for (var i = 1; i < count; i++) {
-    clicked_ids.push(i)
-    clicked[i] = true;
-    var element = document.getElementById(i.toString());
-    element.style.backgroundColor = "rgba(0,0,0,0.1)"
-  }
+
+  clicked_ids.push(6)
+  var element = document.getElementById("6");
+  element.style.backgroundColor = "rgba(0,0,0,0.1)"
+  clicked[6] = true;
+  clicked_ids.push(5)
+  var element = document.getElementById("5");
+  element.style.backgroundColor = "rgba(0,0,0,0.1)"
+  clicked[5] = true;
+  clicked_ids.push(4)
+  var element = document.getElementById("4");
+  element.style.backgroundColor = "rgba(0,0,0,0.1)"
+  clicked[4] = true;
+
   //get elements
   const dropdownTitle = document.querySelector('.dropdown .title');
   const dropdownOptions = document.querySelectorAll('.dropdown .option');
