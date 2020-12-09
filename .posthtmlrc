@@ -53,7 +53,7 @@
           },
           {
             "type": "subhed",
-            "value": "Among its Ivy League peers, Columbia athletes spend the most travel time (minutes) for six out of twelve sports."
+            "value": "Among its Ivy League peers, Columbia athletes spend the most travel time (in minutes) for six out of twelve sports"
           },
           {
             "type": "graphic",
@@ -136,9 +136,9 @@
           {
             "type": "image",
             "value": {
-              "width": "full-width",
+              "width": "auto",
               "asset": "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/VBPCDJWDNFANBKPUEQ6NS5OTKQ.jpg",
-              "credit": "Kali Duffy / Senior Staff Photographer"
+              "caption": "Kali Duffy / Senior Staff Photographer"
             }
           },
           {
@@ -260,9 +260,9 @@
           {
             "type": "image",
             "value": {
-              "width": "full-width",
+              "width": "auto",
               "asset": "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/73BTF4QYC5HSRENEWFP7IXOGKI.jpg",
-              "credit": "Olivia Treynor / Senior Staff Photographer"
+              "caption": "Olivia Treynor / Senior Staff Photographer"
             }
           },
           {
@@ -283,9 +283,9 @@
           }
         ],
         "headline": "The ‘inescapable’ effect of off-campus athletics: How the distance to Baker has shaped Columbia’s recruiting, performance, and sports culture",
-        "date": "",
+        "date": "December 9, 2020",
         "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Clara-Ence-Morse/\">Clara Ence Morse</a>\nVisual design by <a href=\"https://www.columbiaspectator.com/contributors/Jefferson-Sheng/\">Jefferson Sheng</a>\nInteractives by Victoria Geh, Evan Li, Patrick Puma, and <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
-        "methodology": "<b>About the numbers</b>\n\nFacility locations were found on the respective athletic websites of each Ivy League school. Travel distances were calculated from the center of campus “quad” at each school Google Maps. Travel times were calculated assuming a commute on Monday at 3 p.m. for every athlete.\nAverage sports distances were calculated only for the sports in common between all Ivy League schools, before Brown and Dartmouth's sport cuts in summer 2020. Data can be accessed he",
+        "methodology": "<b>About the numbers</b>\n\nFacility locations were found on the respective athletic websites of each Ivy League school. Travel distances were calculated from the center of campus “quad” at each school using Google Maps. Travel times were calculated assuming a commute on Monday at 3 p.m. EST for every athlete with added traffic time subject to location. \n\nAverage sports distances were calculated for only common sports between all Ivy League schools, before <a href=\"https://www.insidehighered.com/news/2020/06/01/brown-university-cuts-11-varsity-sports\">Brown</a> and <a href=\"https://www.espn.com/college-sports/story/_/id/29435435/dartmouth-cuts-swimming-diving-golf-men-lightweight-rowing?platform=amp\">Dartmouth's</a> sport cuts in summer 2020. Data can be accessed <a href=\"https://docs.google.com/spreadsheets/d/1GSN4CwKV-8UW6OlaXv0YqLfcwgjGon106aqeswYhLDs/edit?usp=sharing\"><b>here</b></a>.",
         "USE_NEWS_NAV": true,
         "USE_EYE_NAV": false,
         "USE_COVER_HED": false,

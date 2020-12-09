@@ -1,6 +1,6 @@
 {
   "headline": "The ‘inescapable’ effect of off-campus athletics: How the distance to Baker has shaped Columbia’s recruiting, performance, and sports culture",
-  "date": "",
+  "date": "December 9, 2020",
   "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Clara-Ence-Morse/\">Clara Ence Morse</a>\nVisual design by <a href=\"https://www.columbiaspectator.com/contributors/Jefferson-Sheng/\">Jefferson Sheng</a>\nInteractives by Victoria Geh, Evan Li, Patrick Puma, and <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
   "top": [
     {
@@ -8,11 +8,11 @@
       "value": {
         "asset": "line-map.html",
         "steps": [
-          "Out of all the Ivy League football athletes, a typical <span class=hcolumbia> Lion</span> would need to travel the furthest to reach their home court at Columbia’s Baker Athletic Complex.",
-          "Five minutes into the bus ride to Baker, the typical  <span class=hpenn> Penn</span> and <span class=hdartmouth>Dartmouth</span> athletes would have reached their destination by walking from the center of their campuses.",
-          "Ten minutes in, <span class=hprinceton>Princeton</span> and <span class=hbrown>Brown</span>  athletes would have also reached their destination by walking.",
+          "Out of all the Ivy League football athletes, a typical <span style=background-color:#9BCBEB;color:#FFFFFF> Lion</span> would need to travel the furthest to reach their home court at Columbia’s Baker Athletic Complex.",
+          "Five minutes into the bus ride to Baker, the typical  <span style=background-color:#011F5B;color:#FFFFFF> Penn</span> and <span style=background-color:#046A38;color:#FFFFFF>Dartmouth</span> athletes would have reached their destination by walking from the center of their campuses.",
+          "Ten minutes in, <span style=background-color:#FF671F;color:#FFFFFF>Princeton</span> and <span style=background-color:#7C2529;color:#FFFFFF>Brown</span>  athletes would have also reached their destination by walking.",
           "",
-          "Twenty minutes in, <span class=hcornell>Cornell</span> and <span class=hharvard>Harvard</span> students would have reached their destination by walking, and <span class=hyale>Yale</span> athletes would have reached their practice by driving.",
+          "Twenty minutes in, <span style=background-color:#B31B1B;color:#FFFFFF>Cornell</span> and <span style=background-color:#A41034;color:#FFFFFF>Harvard</span> students would have reached their destination by walking, and <span style=background-color:#00356B;color:#FFFFFF>Yale</span> athletes would have reached their practice by driving.",
           "It takes a total of twenty-five minutes for Lions to reach Baker—almost an hour round trip that is sometimes worsened by traffic"
         ]
       }
@@ -49,7 +49,7 @@
     },
     {
       "type": "subhed",
-      "value": "Among its Ivy League peers, Columbia athletes spend the most travel time (minutes) for six out of twelve sports."
+      "value": "Among its Ivy League peers, Columbia athletes spend the most travel time (in minutes) for six out of twelve sports"
     },
     {
       "type": "graphic",
@@ -132,9 +132,9 @@
     {
       "type": "image",
       "value": {
-        "width": "full-width",
+        "width": "auto",
         "asset": "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/VBPCDJWDNFANBKPUEQ6NS5OTKQ.jpg",
-        "credit": "Kali Duffy / Senior Staff Photographer"
+        "caption": "Kali Duffy / Senior Staff Photographer"
       }
     },
     {
@@ -256,9 +256,9 @@
     {
       "type": "image",
       "value": {
-        "width": "full-width",
+        "width": "auto",
         "asset": "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/73BTF4QYC5HSRENEWFP7IXOGKI.jpg",
-        "credit": "Olivia Treynor / Senior Staff Photographer"
+        "caption": "Olivia Treynor / Senior Staff Photographer"
       }
     },
     {
@@ -278,5 +278,5 @@
       "value": "<i>Senior Staff Writer Clara Ence Morse can be contacted at </i><a href=\"mailto:clara.encemorse@columbiaspectator.com\"><i>clara.encemorse@columbiaspectator.com</i></a><i>. Follow her on Twitter </i><a href=\"https://twitter.com/ccemorse?lang=en\"><i>@ccemorse</i></a><i>.</i>"
     }
   ],
-  "methodology": "<b>About the numbers</b>\n\nFacility locations were found on the respective athletic websites of each Ivy League school. Travel distances were calculated from the center of campus “quad” at each school Google Maps. Travel times were calculated assuming a commute on Monday at 3 p.m. for every athlete.\nAverage sports distances were calculated only for the sports in common between all Ivy League schools, before Brown and Dartmouth's sport cuts in summer 2020. Data can be accessed he"
+  "methodology": "<b>About the numbers</b>\n\nFacility locations were found on the respective athletic websites of each Ivy League school. Travel distances were calculated from the center of campus “quad” at each school using Google Maps. Travel times were calculated assuming a commute on Monday at 3 p.m. EST for every athlete with added traffic time subject to location. \n\nAverage sports distances were calculated for only common sports between all Ivy League schools, before <a href=\"https://www.insidehighered.com/news/2020/06/01/brown-university-cuts-11-varsity-sports\">Brown</a> and <a href=\"https://www.espn.com/college-sports/story/_/id/29435435/dartmouth-cuts-swimming-diving-golf-men-lightweight-rowing?platform=amp\">Dartmouth's</a> sport cuts in summer 2020. Data can be accessed <a href=\"https://docs.google.com/spreadsheets/d/1GSN4CwKV-8UW6OlaXv0YqLfcwgjGon106aqeswYhLDs/edit?usp=sharing\"><b>here</b></a>."
 }
