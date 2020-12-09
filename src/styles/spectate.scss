@@ -1,7 +1,11 @@
 /* Declaring variables */
 
-$georgia: Georgia, serif;
-$graphik: Graphik, helvetica, arial, sans-serif;
+$georgia: Georgia,
+serif;
+$graphik: Graphik,
+helvetica,
+arial,
+sans-serif;
 
 $gbody-width: 600px;
 $gbody-padding: 20px;
@@ -15,34 +19,29 @@ $fade-transition-duration: 0.25s;
 
 @font-face {
   font-family: Georgia;
-  src: url('https://spectator-fonts.s3.amazonaws.com/Georgia.ttf')
-    format('truetype');
+  src: url('https://spectator-fonts.s3.amazonaws.com/Georgia.ttf') format('truetype');
 }
 
 @font-face {
   font-family: Georgia;
-  src: url('https://spectator-fonts.s3.amazonaws.com/Georgia+Italic.ttf')
-    format('truetype');
+  src: url('https://spectator-fonts.s3.amazonaws.com/Georgia+Italic.ttf') format('truetype');
   font-style: italic;
 }
 
 @font-face {
   font-family: Georgia;
-  src: url('https://spectator-fonts.s3.amazonaws.com/Georgia+Bold.ttf')
-    format('truetype');
+  src: url('https://spectator-fonts.s3.amazonaws.com/Georgia+Bold.ttf') format('truetype');
   font-weight: 700;
 }
 
 @font-face {
   font-family: Graphik;
-  src: url('https://spectator-fonts.s3.amazonaws.com/Graphik-400-Regular.otf')
-    format('opentype');
+  src: url('https://spectator-fonts.s3.amazonaws.com/Graphik-400-Regular.otf') format('opentype');
 }
 
 @font-face {
   font-family: Graphik;
-  src: url('https://spectator-fonts.s3.amazonaws.com/Graphik-600-Semibold.otf')
-    format('opentype');
+  src: url('https://spectator-fonts.s3.amazonaws.com/Graphik-600-Semibold.otf') format('opentype');
   font-weight: 600;
 }
 
@@ -50,6 +49,7 @@ $fade-transition-duration: 0.25s;
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1,
@@ -99,6 +99,17 @@ b {
   font-weight: bold;
 }
 
+.grid-title {
+  width: 70%;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: "Roboto",sans-serif;
+  font-size: 22px;
+  line-height: 1.63;
+  font-weight: bold;
+
+}
+
 /* Styling the cover and cover-hed */
 
 .cover {
@@ -130,6 +141,7 @@ b {
 
     .byline {
       text-align: center;
+
       a {
         color: #fff;
       }
@@ -197,6 +209,9 @@ header {
 }
 
 @media (max-width: 500px) {
+  .grid-title {
+    width:90%;
+  }
   header #headline {
     font-size: 38px;
     margin-bottom: 10px;
@@ -308,6 +323,7 @@ header {
 }
 
 #navbar:not(.show-nav-links) {
+
   .hamburger,
   .hamburger-btn:after,
   .hamburger-btn:before {
@@ -375,8 +391,7 @@ header {
 
   #navbar.show-nav-links {
     .hamburger-btn {
-      background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC4yOSAxMi4zIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTtzdHJva2U6Izk5OTtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmljb24tY2xvc2U8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PGxpbmUgY2xhc3M9ImNscy0xIiB4MT0iMC4zOSIgeTE9IjAuMzIiIHgyPSI5LjkiIHkyPSIxMS45OSIvPjxsaW5lIGNsYXNzPSJjbHMtMSIgeDE9IjAuMzkiIHkxPSIxMS45OSIgeDI9IjkuOSIgeTI9IjAuMzIiLz48L2c+PC9nPjwvc3ZnPg==")
-        no-repeat 50% content-box;
+      background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC4yOSAxMi4zIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTtzdHJva2U6Izk5OTtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmljb24tY2xvc2U8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PGxpbmUgY2xhc3M9ImNscy0xIiB4MT0iMC4zOSIgeTE9IjAuMzIiIHgyPSI5LjkiIHkyPSIxMS45OSIvPjxsaW5lIGNsYXNzPSJjbHMtMSIgeDE9IjAuMzkiIHkxPSIxMS45OSIgeDI9IjkuOSIgeTI9IjAuMzIiLz48L2c+PC9nPjwvc3ZnPg==") no-repeat 50% content-box;
       background-size: 86% auto;
     }
 
@@ -389,7 +404,7 @@ header {
       opacity: 1;
       box-shadow: 0 -10px white,
         // White shadow to mask top box-shadow
-          $navbar-shadow;
+        $navbar-shadow;
       flex: 1 0 auto;
     }
 
@@ -422,6 +437,9 @@ header {
 
   img {
     width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .image-caption-text {
@@ -429,6 +447,7 @@ header {
     font-family: $georgia;
     color: #666;
     margin: 7px 0 0 0;
+    margin-left: -10px;
     padding: 0 $gbody-padding / 2;
     line-height: 1.3;
 
