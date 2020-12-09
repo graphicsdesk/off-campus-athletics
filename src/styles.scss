@@ -11,54 +11,6 @@ body {
     max-height: 0 !important;
 }
 
-.hcolumbia{
-    background-color:#9BCBEB;
-    color:#FFFFFF;
-    border-radius:2px;
-    padding:4px 4px 2px 4px;
-}
-.hpenn{
-    background-color:#011F5B;
-    color:#FFFFFF;
-    border-radius:2px;
-    padding:4px 4px 2px 4px
-}
-.hdartmouth{
-    background-color:#046A38;
-    color:#FFFFFF;
-    border-radius:2px;
-    padding:4px 4px 2px 4px
-}
-.hprinceton{
-    background-color:#FF671F;
-    color:#FFFFFF;
-    border-radius:2px;
-    padding:4px 4px 2px 4px
-}
-.hbrown{
-    background-color:#7C2529;
-    color:#FFFFFF;
-    border-radius:2px;
-    padding:4px 4px 2px 4px
-}
-.hcornell{
-    background-color:#B31B1B;
-    color:#FFFFFF;
-    border-radius:2px;
-    padding:4px 4px 2px 4px
-}
-.hharvard{
-    background-color:#A41034;
-    color:#FFFFFF;
-    border-radius:2px;
-    padding:4px 4px 2px 4px
-}
-.hyale{
-    background-color:#00356B;
-    color:#FFFFFF;
-    border-radius:2px;
-    padding:4px 4px 2px 4px
-}
 .dropdown {
     z-index: 1;
     position: absolute;
@@ -178,10 +130,17 @@ body {
 }
 
 .step {
+    
+    span {
+        border-radius: 2px;
+        padding: 4px 4px 2px 4px;
+    }
+
     padding-bottom: 50vh;
     /* margin-bottom: 10vh; */
     opacity: 0.25;
     transition: 0.5s;
+
     div {
         padding: 25px 50px;
         line-height: 25px;
@@ -192,6 +151,7 @@ body {
         color: white;
         font-family: "Roboto", sans-serif;
     }
+
 
     img {
         width: 100%;
