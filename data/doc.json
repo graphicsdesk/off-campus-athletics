@@ -1,7 +1,7 @@
 {
   "headline": "The ‘inescapable’ effect of off-campus athletics: How the distance to Baker has shaped Columbia’s recruiting, performance, and sports culture",
   "date": "",
-  "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Clara-Ence-Morse/\">Clara Ence Morse</a>\nVisual design by Jefferson Sheng\nInteractives by Victoria Geh, Evan Li, Patrick Puma, and <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
+  "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Clara-Ence-Morse/\">Clara Ence Morse</a>\nVisual design by <a href=\"https://www.columbiaspectator.com/contributors/Jefferson-Sheng/\">Jefferson Sheng</a>\nInteractives by Victoria Geh, Evan Li, Patrick Puma, and <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
   "top": [
     {
       "type": "graphic",
@@ -19,10 +19,6 @@
     }
   ],
   "body": [
-    {
-      "type": "subhed",
-      "value": "Section 1:"
-    },
     {
       "type": "text",
       "value": "There will be no tailgates, games, or practices this semester. In fact, many of Columbia’s athletes are off campus and thousands of miles away from their typical practice locations. But even when sports return to the Baker Athletics Complex, most Columbia athletes will still be farther from their home turf than athletes at other Ivy League schools. The Lions will hop back on their familiar buses and prepare for familiarly lengthy commutes."
@@ -52,14 +48,17 @@
       "value": "In his four years at Columbia, with an average one-way commute of around 25 minutes, Spectator calculated that Murphy spent around 2,100 hours on a bus, not counting away games. The number is over two times the amount that the average non-Columbia, Ivy League football player spends in transit during their tenure. All other Ivy League schools have a football stadium on campus except Yale and Brown, whose stadiums are two miles and 1.5 miles away, respectively. In comparison, Murphy traveled 5.8 miles to Baker and 5.8 miles back six days a week for four years."
     },
     {
+      "type": "subhed",
+      "value": "Among its Ivy League peers, Columbia athletes spend the most travel time (minutes) for six out of twelve sports."
+    },
+    {
       "type": "graphic",
       "value": {
-        "title": "Among its Ivy League peers, Columbia athletes spend the most travel time (minutes) for six out of twelve sports.",
         "asset": "sports-grid.html"
       }
     },
     {
-      "type": "text",
+      "type": "subhed",
       "value": "Only (5.8 miles away from) here"
     },
     {
@@ -129,6 +128,14 @@
     {
       "type": "subhed",
       "value": "“Leave that stuff down on 116th”: Athletes’ mental distance"
+    },
+    {
+      "type": "image",
+      "value": {
+        "width": "full-width",
+        "asset": "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/VBPCDJWDNFANBKPUEQ6NS5OTKQ.jpg",
+        "credit": "Kali Duffy / Senior Staff Photographer"
+      }
     },
     {
       "type": "text",
@@ -227,7 +234,7 @@
       "value": "“I don’t think it’s measurable, but I think it’s inescapable,” Alwin said of the impact on the team’s performance. “I don’t see how you could argue that it doesn’t have an impact.”"
     },
     {
-      "type": "text",
+      "type": "subhed",
       "value": "Sports culture from 116th to 218th"
     },
     {
@@ -247,10 +254,10 @@
       "value": "“[At Plant,] everyone knew us for the football,” Murphy said. “I remember being the guy on campus. And then you come here—no one really knows, some people don’t even know that we have a football team. It’s honestly quite funny. I’ll be wearing a Columbia football shirt and someone will be like, ‘Oh, where do you guys play?’”"
     },
     {
-      "type": "graphic",
+      "type": "image",
       "value": {
-        "photo": "<a href=\"https://cloudfront-us-east-1.images.arcpublishing.com/spectator/73BTF4QYC5HSRENEWFP7IXOGKI.jpg\">https://cloudfront-us-east-1.images.arcpublishing.com/spectator/73BTF4QYC5HSRENEWFP7IXOGKI.jpg</a>",
-        "caption": "",
+        "width": "full-width",
+        "asset": "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/73BTF4QYC5HSRENEWFP7IXOGKI.jpg",
         "credit": "Olivia Treynor / Senior Staff Photographer"
       }
     },
@@ -271,5 +278,5 @@
       "value": "<i>Senior Staff Writer Clara Ence Morse can be contacted at </i><a href=\"mailto:clara.encemorse@columbiaspectator.com\"><i>clara.encemorse@columbiaspectator.com</i></a><i>. Follow her on Twitter </i><a href=\"https://twitter.com/ccemorse?lang=en\"><i>@ccemorse</i></a><i>.</i>"
     }
   ],
-  "methodology": ""
+  "methodology": "<b>About the numbers</b>\n\nFacility locations were found on the respective athletic websites of each Ivy League school. Travel distances were calculated from the center of campus “quad” at each school Google Maps. Travel times were calculated assuming a commute on Monday at 3 p.m. for every athlete.\nAverage sports distances were calculated only for the sports in common between all Ivy League schools, before Brown and Dartmouth's sport cuts in summer 2020. Data can be accessed he"
 }
