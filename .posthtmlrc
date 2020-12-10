@@ -12,12 +12,12 @@
             "value": {
               "asset": "line-map.html",
               "steps": [
-                "Compared to other Ivy League football players, a typical <span style=background-color:#9BCBEB;color:#FFFFFF>Lion</span> would need to travel the furthest to reach their home court at Columbia’s Baker Athletic Complex.",
+                "Compared to other Ivy League football players, a typical Lion would need to travel the furthest to reach their home court at Columbia’s Baker Athletic Complex.",
                 "Five minutes into the bus ride to Baker, the typical  <span style=background-color:#011F5B;color:#FFFFFF> Penn</span> and <span style=background-color:#046A38;color:#FFFFFF>Dartmouth</span> athletes would have reached their destination by walking from the center of their campuses.",
                 "Ten minutes in, <span style=background-color:#FF671F;color:#FFFFFF>Princeton</span> and <span style=background-color:#7C2529;color:#FFFFFF>Brown</span>  athletes would have also reached their destination by walking.",
                 "",
                 "Twenty minutes in, <span style=background-color:#B31B1B;color:#FFFFFF>Cornell</span> and <span style=background-color:#A41034;color:#FFFFFF>Harvard</span> students would have reached their destination by walking, and <span style=background-color:#00356B;color:#FFFFFF>Yale</span> athletes would have reached their practice facility by driving.",
-                "It takes a total of twenty-five minutes for Lions to reach Baker—almost an hour round trip."
+                "It takes a total of twenty-five minutes for <span style=background-color:#9BCBEB;color:#FFFFFF>Lions</span> to reach Baker—almost an hour round trip."
               ]
             }
           }
@@ -286,7 +286,7 @@
         "date": "December 9, 2020",
         "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Clara-Ence-Morse/\">Clara Ence Morse</a>\nVisual design by <a href=\"https://www.columbiaspectator.com/contributors/Jefferson-Sheng/\">Jefferson Sheng</a> and <a href=\"https://www.columbiaspectator.com/contributors/Jun-Yi-Zhang/\">Jun Yi Zhang</a>\nInteractives by <a href=\"https://www.columbiaspectator.com/contributors/Victoria-Geh/\">Victoria Geh</a>, <a href=\"https://www.columbiaspectator.com/contributors/Evan-Li/\">Evan Li</a>, <a href=\"https://www.columbiaspectator.com/contributors/Patrick-Puma/\">Patrick Puma</a>, and <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
         "methodology": "<b>About the numbers</b>\n\nFacility locations were found on the athletic websites of each Ivy League school. Travel distances were calculated from the “quad” at the center of each school’s campus using Google Maps. Travel times were calculated based on a Monday commute at 3 p.m. EST for every athlete, with additional time allotted for traffic subject to each location. \n\nAverage distances to each facility were only calculated for sports teams all the Ivy League schools had in common, before <a href=\"https://www.insidehighered.com/news/2020/06/01/brown-university-cuts-11-varsity-sports\">Brown</a> and <a href=\"https://www.espn.com/college-sports/story/_/id/29435435/dartmouth-cuts-swimming-diving-golf-men-lightweight-rowing?platform=amp\">Dartmouth's</a> sports cuts in summer 2020. Data can be accessed <a href=\"https://docs.google.com/spreadsheets/d/1GSN4CwKV-8UW6OlaXv0YqLfcwgjGon106aqeswYhLDs/edit?usp=sharing\"><b>here</b></a>.",
-        "footer": "Jefferson Sheng is a graphics reporter. Hong Sen Du is a senior newsroom developer. Victoria Geh, Evan Li, and Patrick Puma are staff newsroom developers.",
+        "footer": "Jefferson Sheng is a graphics reporter. Jun Yi Zhang is a graphics deputy editor. Hong Sen Du is a senior newsroom developer. Victoria Geh, Evan Li, and Patrick Puma are staff newsroom developers.",
         "USE_NEWS_NAV": true,
         "USE_EYE_NAV": false,
         "USE_COVER_HED": false,

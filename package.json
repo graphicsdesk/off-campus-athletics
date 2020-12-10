@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "parcel src/index.html --global script",
-    "build": "parcel build src/index.html --global script --public-url . --no-content-hash",
+    "build": "parcel build src/index.html --global script --public-url https://spectator-static-assets.s3.amazonaws.com/off-campus-athletics --no-content-hash",
     "postinstall": "patch-package"
   },
   "devDependencies": {
@@ -22,10 +22,10 @@
     "ajax": "0.0.4",
     "gridjs": "^3.0.2",
     "intersection-observer": "^0.10.0",
-    "src": "^1.1.2",
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.13.0",
     "scrollama": "^2.2.1",
+    "src": "^1.1.2",
     "text-balancer": "^1.0.5"
   },
   "browserslist": [

@@ -1,7 +1,7 @@
 @import "styles/spectate";
 //styling stuff for dropdown
 // Uncomment the following line before publishing a News story
-// @import "styles/news-ellipsis";
+@import "styles/news-ellipsis";
 
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -76,6 +76,7 @@ body {
     width: 100vw;
     position: sticky;
     z-index: -5;
+    overflow-x:hidden;
 }
 
 #header {
@@ -150,6 +151,7 @@ body {
     p {
         color: white;
         font-family: "Roboto", sans-serif;
+        margin: 0 !important;
     }
 
 

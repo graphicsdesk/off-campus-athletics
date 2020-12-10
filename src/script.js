@@ -2,7 +2,6 @@ import textBalancer from 'text-balancer';
 import initiatePage from './scripts/page';
 import { intersectTop } from './scripts/utils';
 import { spectate as spectateConfig } from '../package.json';
-import './scripts/scroller';
 // Main page initiation
 
 initiatePage();

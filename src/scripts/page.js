@@ -1,5 +1,6 @@
 import { spectate as spectateConfig } from '../../package.json';
 import initGrid from "../scripts/grid";
+import initMap from './scroller';
 
 /**
  * Put all initializer scripts into this init() function
@@ -8,6 +9,7 @@ import initGrid from "../scripts/grid";
 function init() {
   // Your scripts here...
   initGrid();
+  initMap();
   // If an artboard is on the page, load the ai2html resizer
   if (document.querySelector('.g-artboard[data-min-width]')) {
     import('./ai2html-resizer').then(p => p.default());
